@@ -12,7 +12,7 @@ namespace BLL.Models
 {
     public class StudentModel
     {
-        public Student Record { get; }
+        public Student Record { get; set; }
 
         public int Id => Record.Id;
 
