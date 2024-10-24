@@ -20,8 +20,8 @@ namespace BLL.Services
 
         public Service Create(Student student)
         {
-            if (_db.Students.Any(s => s.Id == student.Id))
-                return Error("Student with the same id exists!");
+            if (_db.Students.Any(s => s.Name == student.Name && s.Surname == student.Surname))
+                return Error("Student with the same name and surname exists!");
             _db.Students.Add(student);
             _db.SaveChanges();
             return Success();
